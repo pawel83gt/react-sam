@@ -27,9 +27,15 @@ body {
   min-height: 100vh;
 }
 
-.wrapper {
+.general-block{
   display: flex;
   flex-direction: row;
+  gap: 20px;
+  min-height: 100vh;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   min-height: 100vh;
 }
