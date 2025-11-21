@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-export const TrackDetail = (track) => {
+export const TrackDetail = ({ id }) => {
 
     const [selectTrack, setSelectTrack] = useState(null);
 
     useEffect(() => {
-        if (track.track) {
+        if (id) {
 
             fetch(
                 'https://musicfun.it-incubator.app/api/1.0/playlists/tracks/' +
-                track.track,
+                id,
                 {
                     headers: {
                         'api-key': 'bec399a0-ffa4-41d0-89c1-d7badc2ab952',
@@ -22,15 +22,15 @@ export const TrackDetail = (track) => {
                 });
         }
 
-    }, [track.track])
+    }, [id])
 
     return (
         <div>
             <h3>Выбранный трек</h3>
-            {!track.track ? (
+            {!id ? (
                 'Трек не выбран'
             ) : (
-                (track.track && selectTrack === null) || (track.track !== selectTrack.id)
+                (id && selectTrack === null) || (id !== selectTrack.id)
                     ? <div className={'gradient-loader'}></div>
                     : (<div>
                         <div>{selectTrack.attributes.title}</div>

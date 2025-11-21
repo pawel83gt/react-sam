@@ -12,7 +12,7 @@ interface Track {
     };
 }
 
-export const TrackList = ({onSelectTrack}) => {
+export const TrackList = ({ onSelectTrack }) => {
 
     const [data, setData] = useState<Track[] | null>(null);
     const [selectTrackId, setSelectTrackId] = useState<number>();
@@ -48,14 +48,14 @@ export const TrackList = ({onSelectTrack}) => {
                 <ul>
                     {data.map((track) => {
                         return (
-                            <div
-                                key={track.id}
-                                onClick={() => {
-                                    setSelectTrackId(track.id);
-                                    onSelectTrack(track.id);
-                                }}
-                            >
-                                <li>
+                            <li>
+                                <div
+                                    key={track.id}
+                                    onClick={() => {
+                                        setSelectTrackId(track.id);
+                                        onSelectTrack(track.id);
+                                    }}
+                                >
                                     <div className={selectTrackId === track.id ? 'active' : ''}>
                                         {track.attributes.title}
                                     </div>
@@ -63,8 +63,8 @@ export const TrackList = ({onSelectTrack}) => {
                                         src={track.attributes.attachments[0].url}
                                         controls
                                     ></audio>
-                                </li>
-                            </div>
+                                </div>
+                            </li>
                         );
                     })}
                 </ul>

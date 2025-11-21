@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="general-block">
       <TrackList onSelectTrack={setSelectedTrack} />
-      <TrackDetail track={selectedTrack} />
+      <TrackDetail id={selectedTrack} />
     </div>
   );
 }
