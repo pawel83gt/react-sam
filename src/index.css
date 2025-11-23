@@ -27,7 +27,7 @@ body {
   min-height: 100vh;
 }
 
-.general-block{
+.general-block {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -99,6 +99,8 @@ button:focus-visible {
 }
 
 .active {
+  border: 1px solid #646cff;
+  border-radius: 12px;
   text-decoration: underline;
   color: #646cff;
 }
