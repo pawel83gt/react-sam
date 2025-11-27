@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { TrackList } from './components/TrackList';
-import { TrackDetail } from './components/TrackDetail';
+import { useSelectedTrack } from './bll/useSelectedTrack';
+import { TrackList } from './ui/TrackList';
+import { TrackDetail } from './ui/TrackDetail';
+
+
 
 function App() {
-  const [selectedTrack, setSelectedTrack] = useState(null);
 
-  const handleTrackSelect = (id) => {
-    setSelectedTrack(id);
-  };
+  const { selectedTrack, handleTrackSelect } = useSelectedTrack();
+
   return (
     <div className="general-block">
       <TrackList

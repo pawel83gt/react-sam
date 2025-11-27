@@ -1,0 +1,14 @@
+.default {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 8px;
+    border: 1px solid #262736;
+    border-radius: 12px;
+    color: #2e2e31;
+}
+
+.active {
+    border: 1px solid #646cff;
+    color: #646cff;
+}
