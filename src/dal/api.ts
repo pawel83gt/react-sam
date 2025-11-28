@@ -14,7 +14,7 @@ export const getTrack = (id: string) => {
         id,
         {
             headers: {
-                'api-key': 'bec399a0-ffa4-41d0-89c1-d7badc2ab952',
+                'api-key': import.meta.env.VITE_API_KEY,
             },
         }
     ).then((response) => response.json())
@@ -46,7 +46,7 @@ export const getTraks = (): Promise<GetTrackListOutputData> => {
         'https://musicfun.it-incubator.app/api/1.0/playlists/tracks',
         {
             headers: {
-                'api-key': 'bec399a0-ffa4-41d0-89c1-d7badc2ab952',
+                'api-key': import.meta.env.VITE_API_KEY,
             },
         }
     ).then((response) => response.json())
